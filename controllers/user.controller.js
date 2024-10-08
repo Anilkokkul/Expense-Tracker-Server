@@ -44,7 +44,6 @@ exports.loginUser = async (req, res) => {
     );
     if (isValidPassword) {
       const token = jwt.sign({ userId: userExist._id }, process.env.SECRET_KEY);
-      console.log("token", token);
       res.cookie("accessToken", token, {
         httpOnly: true,
         secure: true,
