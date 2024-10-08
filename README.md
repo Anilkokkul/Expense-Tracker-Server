@@ -39,5 +39,5 @@ Create a ```.env``` file in the root directory and add your environment variable
 ### 4.Start the server:
 
 ```
-npm start
+npm run dev
 ```
