@@ -1,16 +1,11 @@
 const express = require("express");
-const admin = require("firebase-admin");
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const Routes = require("./routes");
 const { db } = require("./db/db.connect");
 db();
-const serviceAccount = require(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
 
 const app = express();
 app.use(cookieParser());
